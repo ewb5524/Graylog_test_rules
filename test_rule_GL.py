@@ -11,3 +11,10 @@ when
 then
 ...
 end
+
+rule "-4 hours""
+when 
+    has_field("timestamp")
+then
+    set_field("timestamp", to_date($message.timestamp) - hours(4))
+end
